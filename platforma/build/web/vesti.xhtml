@@ -1,0 +1,127 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>vesti</title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"></link>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+        <style>
+            .dropdown-menu{
+                min-width:200px;
+            }
+
+            .collapsible {
+                
+                width: 100%;
+                border: none;
+                text-align: left;
+                outline: none;
+            }
+
+            .active, .collapsible:hover {
+                cursor: pointer
+            }
+
+            .content {
+                
+
+                display: none;
+                overflow: hidden;
+                
+            }
+        </style>
+
+    </h:head>
+    <h:body>
+        <div class="container-fluid">
+            <ui:insert name = "header_user">
+                <ui:include src = "header_user.xhtml"/>
+            </ui:insert> 
+
+            <div class="row">
+                <div class="col-sm-3 p-5">
+                    <ui:insert name = "left">
+                        <ui:include src = "left.xhtml"/>
+                    </ui:insert> 
+                </div>
+
+
+                <div class="col-sm-6 p-3 text-center">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <h1 class="text-center text-dark  p-5">Vesti</h1>  
+                            </div>
+                            <div class="col-sm-12">
+                                <h2 class="text-left">Pretraga:</h2> 
+                                <h:form>
+                                    <div class='input-group'>
+                                        <h:inputText class='form-control' size="100"></h:inputText>
+                                        <span class="input-group-btn">
+                                            <button><i class="fa fa-search fa-2x"></i></button>
+                                           </span>
+                                    </div>
+                                    </h:form>
+                                    <button class="collapsible" id="button">+Napredna pretraga</button>
+                                    <div  id="np" style="display: none">
+                                        Kategorija:
+                                        <br/>
+                                        Datum postavljanja:
+                                        <br/>
+                                        Autor:
+                                        <br/>
+                                    </div>
+                                
+                            </div>
+                            <div class="col-sm-12 mt-3">
+                                <ui:insert name = "vesti">
+                                    <ui:include src = "news_carousel.xhtml"/>
+                                </ui:insert> 
+
+                            </div>
+                            <div class="col-sm-12 mt-3">
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-sm-3 p-5 text-center">
+                    <div class="col-sm-3 p-5 text-center">
+                        <ui:insert name = "right" >
+                            <ui:include src = "right.xhtml" />
+                        </ui:insert> 
+                    </div>
+                </div>
+
+            </div>
+
+            <ui:insert name = "footer">
+                <ui:include src = "footer.xhtml"/>
+            </ui:insert>
+
+
+        </div>
+
+
+
+        <script>
+
+            var button = document.getElementById('button'); // Assumes element with id='button'
+
+            button.onclick = function () {
+                var div = document.getElementById('np');
+                if (div.style.display === 'none') {
+                    div.style.display = 'block';
+                } else {
+                    div.style.display = 'none';
+                }
+                
+            };
+
+        </script>
+    </h:body>
+</html>

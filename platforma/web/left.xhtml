@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+        <meta http-equiv="pragma" content="no-cache"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"></link>
+        <style type="text/css">
+            .dropdown-menu{
+                min-width:200px;
+            }
+             .collapsible {
+                
+                width: 100%;
+                border: none;
+                text-align: left;
+                outline: none;
+            }
+
+            .active, .collapsible:hover {
+                
+            }
+
+            .content {
+                
+
+                display: none;
+                overflow: hidden;
+                
+            }
+
+        </style>
+    </h:head>
+
+    <h:body>
+        <ui:composition>
+            <hr/>
+
+
+            <h5 class="collapsible offset-sm-1 text-left text-muted"> Grupe </h5>
+
+            <div class="content">
+                <hr/>
+                <i class="offset-sm-1 text-left text-muted">Moje grupe</i>
+                <hr/>
+                <i class="offset-sm-1 text-left text-muted">Sve grupe</i>
+                <hr/>
+                <i class="offset-sm-1 text-left text-muted">Napravi novu grupu</i>
+            </div>
+            <hr/>
+            <h5 class="collapsible offset-sm-1 text-left text-muted"> Obavestenja </h5>
+            <div class="content">
+                <hr/>
+                <i class="offset-sm-1 text-left text-muted">Nova obavestenja</i>
+                <hr/>
+                <i class="offset-sm-1 text-left text-muted">Sva obavestenja</i>
+                <hr/>
+                <i class="offset-sm-1 text-left text-muted">Posalji obavestenje</i>
+            </div>
+            <hr/>
+            <h5 class="collapsible offset-sm-1 text-left text-muted"> Ankete</h5>
+            <div class="content">
+                <hr/>
+                <i class="offset-sm-1 text-left text-muted">Popunjene ankete</i>
+                <hr/>
+                <i class="offset-sm-1 text-left text-muted">Nove ankete</i>
+                <hr/>
+                <i class="offset-sm-1 text-left text-muted">Postavi anketu</i>
+            </div>
+            <hr/>
+            <h5 class="collapsible offset-sm-1 text-left text-muted"> Preporuke</h5>
+            <hr/>
+            <script>
+                var coll = document.getElementsByClassName("collapsible");
+                var i;
+
+                for (i = 0; i &lt; coll.length; i++) {
+                    coll[i].addEventListener("click", function () {
+                        this.classList.toggle("active");
+                        var content = this.nextElementSibling;
+                        if (content.style.display === "block") {
+                            content.style.display = "none";
+                        } else {
+                            content.style.display = "block";
+                        }
+                    });
+                }
+            </script>
+        </ui:composition>
+    </h:body>
+
+</html>

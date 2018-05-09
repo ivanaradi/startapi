@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>profil</title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"></link>
+        <style type="text/css">
+            .dropdown-menu{
+                min-width:200px;
+            }
+             .collapsible {
+                
+                width: 100%;
+                border: none;
+                text-align: left;
+                outline: none;
+            }
+
+            .active, .collapsible:hover {
+                cursor: pointer
+            }
+
+            .content {
+                
+
+                display: none;
+                overflow: hidden;
+                
+            }
+
+        </style>
+    </h:head>
+    <h:body>
+        <div class="container-fluid">
+            <ui:insert name = "header_user">
+                <ui:include src = "header_user.xhtml"/>
+            </ui:insert> 
+
+            <div class="row">
+                <div class="col-sm-3 p-5">
+                    <ui:insert name = "left">
+                        <ui:include src = "left.xhtml"/>
+                    </ui:insert> 
+                </div>
+                <div class="col-sm-6">
+                    
+                    Profil...
+
+
+                </div>
+               <div class="offset-sm-1 col-sm-2">
+                    <ui:insert name = "right" >
+                        <ui:include src = "right.xhtml" />
+                    </ui:insert> 
+                </div>
+
+            </div>
+
+            <ui:insert name = "footer">
+                <ui:include src = "footer.xhtml"/>
+            </ui:insert>
+
+
+        </div>
+
+
+
+    </h:body>
+</html>
+

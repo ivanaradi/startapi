@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      >
+    <h:head>
+        <title>Dodaj vest</title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"></link>
+        <style type="text/css">
+            .dropdown-menu{
+                min-width:200px;
+            }
+            .collapsible {
+                width: 100%;
+                border: none;
+                text-align: left;
+                outline: none;
+            }
+            .active, .collapsible:hover {
+                cursor: pointer;
+            }
+
+            .content {
+                display: none;
+                overflow: hidden;
+            }
+        </style>
+    </h:head>
+    <h:body>
+        <div class="container-fluid">
+
+            <ui:insert name = "header)user">
+                <ui:include src = "header_user.xhtml"/>
+            </ui:insert> 
+
+
+
+            <div class="row">
+                <div class="col-sm-3">
+
+                    <ui:include src = "left.xhtml" />
+
+                </div>
+                <div class="col-sm-6 mb-3">
+
+                    <h1 class="text-center text-dark  p-5">Vesti</h1> 
+
+                    <h:form>
+                        <h:panelGrid columns="2">
+                            Naziv vesti:
+                            <h:inputText value="" required="true" requiredMessage="Morate uneti naziv vesti"></h:inputText>
+                            Tekst vesti:
+
+
+                            <p:textEditor widgetVar="editor1" value="#{editorView.text}" height="300" style="margin-bottom:10px"/>
+
+
+                            Kategorija vesti:
+                            <h:selectOneMenu value="" rendered="true" requiredMessage="Morate izabrati kategoriju vesti"></h:selectOneMenu>
+                            <!--autor i datum i vreme upisani automatski!! -->
+                            Vidljivost:
+
+                            <h:selectOneMenu>
+                                <f:selectItem itemLabel="Svi"></f:selectItem>
+                                <f:selectItem itemLabel="Svi startapovi"></f:selectItem>
+                                <f:selectItem itemLabel="Svi investitori"></f:selectItem>
+                                <f:selectItem itemLabel="Dodatne opcije"></f:selectItem>
+                             
+                            </h:selectOneMenu>
+
+                            
+                        </h:panelGrid>
+                    </h:form>
+
+
+
+                </div>
+
+                <div class="offset-sm-1 col-sm-2">
+                    <ui:insert name = "right" >
+                        <ui:include src = "right.xhtml" />
+                    </ui:insert> 
+
+                </div>
+            </div>
+
+
+            <ui:insert name = "footer" >
+                <ui:include src = "footer.xhtml" />
+            </ui:insert>
+
+
+        </div>
+
+
+
+    </h:body>
+</html>
+
